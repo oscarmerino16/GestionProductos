@@ -1,6 +1,6 @@
 package EjercicioModulos;
 
-public class Modulo {
+public class Modulos {
 	
 	private String nombre;
 	private String codigo;
@@ -8,7 +8,7 @@ public class Modulo {
 	
 
 	
-	public Modulo(String nombre, String codigo, int numHoras) {
+	public Modulos(String nombre, String codigo, int numHoras) {
 		this.nombre = nombre;
 		this.codigo = codigo;
 		this.numHoras = numHoras;
@@ -40,7 +40,7 @@ public class Modulo {
 
 	@Override
 	public String toString() {
-		return "Modulo [nombre=" + nombre + ", codigo=" + codigo + ", numHoras=" + numHoras + "]";
+		return nombre + " - " + codigo + " Horas -> " + numHoras;
 	}
 	
 	
