@@ -6,6 +6,8 @@ public class Modulo {
 	private String codigo;
 	private int numHoras;
 	
+
+	
 	public Modulo(String nombre, String codigo, int numHoras) {
 		this.nombre = nombre;
 		this.codigo = codigo;
@@ -40,6 +42,7 @@ public class Modulo {
 	public String toString() {
 		return "Modulo [nombre=" + nombre + ", codigo=" + codigo + ", numHoras=" + numHoras + "]";
 	}
+	
 	
 
 }
