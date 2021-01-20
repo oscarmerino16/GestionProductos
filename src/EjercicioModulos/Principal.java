@@ -2,7 +2,7 @@ package EjercicioModulos;
 
 /**
  * 
- * @author oscar merino
+ * @author Oscar Merino
  * @version 1.0
  */
 
