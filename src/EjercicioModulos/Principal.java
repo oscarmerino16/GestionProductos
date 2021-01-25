@@ -11,6 +11,8 @@ import java.util.Scanner;
 
 	public class Principal {
 		
+		
+		
 	public static int pintaMenu() {
 		
 		Scanner leer = new Scanner(System.in);
@@ -36,13 +38,36 @@ import java.util.Scanner;
 			return num;
 	}	
 	
+<<<<<<< Updated upstream
 	
 	public static void main(String[] args) {
+=======
+	public static void a�adirModulo(String vModulos[]) {
+		Scanner leer = new Scanner(System.in);
+		String nombre, siglas;
+		int horas;
+		
+		for (int i = 0; i <vModulos .length; i++) {
+			
+			System.out.println("Dime el nombre del nuevo modulo");
+			nombre=leer.next();
+			System.out.println("Dime las siglas del nuevo modulo");
+			siglas=leer.next();
+			System.out.println("Dime el numero de horas del nuevo modulo");
+			horas=leer.nextInt();
+			
+			vModulos[i]=nombre+siglas+horas;
+		}
+>>>>>>> Stashed changes
 		
 		Curso c = new Curso("1º DAW", "José Micolau");
 		int cond = 0;
 		
+<<<<<<< Updated upstream
 		do {
+=======
+	}
+>>>>>>> Stashed changes
 
 			switch (pintaMenu()) {
 			case 1:Curso.nuevoModulo();
