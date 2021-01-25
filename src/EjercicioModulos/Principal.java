@@ -38,10 +38,9 @@ import java.util.Scanner;
 			return num;
 	}	
 	
-<<<<<<< Updated upstream
+
 	
-	public static void main(String[] args) {
-=======
+
 	public static void a�adirModulo(String vModulos[]) {
 		Scanner leer = new Scanner(System.in);
 		String nombre, siglas;
@@ -58,41 +57,36 @@ import java.util.Scanner;
 			
 			vModulos[i]=nombre+siglas+horas;
 		}
->>>>>>> Stashed changes
+		}
 		
+
+		public static void main(String[] args) {
 		Curso c = new Curso("1º DAW", "José Micolau");
-		int cond = 0;
+		int opc = 0;
 		
-<<<<<<< Updated upstream
+
 		do {
-=======
-	}
->>>>>>> Stashed changes
-
-			switch (pintaMenu()) {
-			case 1:Curso.nuevoModulo();
-
+			opc = pintaMenu();
+			
+			switch (opc) {
+			case 1:
+				c.addModulo();
 				break;
 			case 2:
-				Scanner ler = new Scanner(System.in);
 				System.out.println(c.toString());
-				System.out.println("Pulse cualquier tecla para salir de ver todos los modulos");
-				String a; 
-				a = ler.next();
 				break;
 			case 3:
-				
-
+				System.out.println("El total de horas lectivas del curso es de "+c.horasYear()+" horas");
 				break;
 			case 4:
-				cond = 1;
-
+				c.eliminarModulo();
 				break;
-
-			default:
+			case 5:
+				System.out.println("Bye");
+				System.exit(0);
 				break;
 			}
-		} while (cond != 1);
+		} while (opc!=5);
 		
 		
 		

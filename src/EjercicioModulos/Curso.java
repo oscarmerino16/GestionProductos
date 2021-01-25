@@ -17,31 +17,87 @@ public class Curso {
 	}
 	
 
-	public static void nuevoModulo() {
-		Scanner leer = new Scanner(System.in);
-		String nueModulo = "";
-		String nueCodigo = "";
-		int nueHoras = 0;
-		int totalHoras = 0;
-
-		System.out.println("Dime el nombre del nuevo modulo:");
-		nueModulo = leer.next();
-		System.out.println("Dime el codigo del nuevo modulo:");
-		nueCodigo = leer.next();
-		System.out.println("Dime cuantas horas tiene el modulo:");
-		nueHoras = leer.nextInt();
+	public void addModulo(){
 		for (int i = 0; i < vModulos.length; i++) {
-			if (vModulos[i] == null) {
-				vModulos[i] = new Modulos(nueModulo, nueCodigo, nueHoras);
-				totalHoras = totalHoras + nueHoras;
+			
+			String nombre="", codigo="";
+			int numHoras=-99;
+			Scanner leerTxt = new Scanner(System.in);
+			Scanner leerNum = new Scanner(System.in);
+			
+			if (vModulos[i]==null) {
+				System.out.println("Dime el nombre del nuevo modulo");
+				nombre = leerTxt.nextLine();
+				System.out.println("Dime el codigo del nuevo modulo");
+				codigo = leerTxt.nextLine();
+				System.out.println("Dime las horas que durara el nuevo modulo");
+				do {
+					try {
+						numHoras = leerNum.nextInt();
+					} catch (Exception e) {
+						numHoras=-99;
+						leerNum = new Scanner(System.in);
+						System.out.println("Introduzca un valor numerico por favor (y que sea mayor que 0)");
+					}
+					if (numHoras<=0) {
+						System.out.println("Introduzca un numero de horas valido por favor (minimo debe ser mayor que 0)");
+					}
+				} while (numHoras<=0);
+				
+				vModulos[i]= new Modulos(nombre, codigo, numHoras);
+				System.out.println("modulo a�adido correctamente");
 				break;
 			}
 		}
-		for (int j = 0; j < 10; j++) {
-			System.out.println("\n");
-		}
+		
 	}
 
+public int horasYear() {
+		
+		int horasTotales=0;
+		
+		for (Modulos m : vModulos) {
+			if (m!=null) {
+				
+				horasTotales+=m.getNumHoras();
+			}
+			
+			
+		}
+		
+		return horasTotales;
+	}
+
+	public void eliminarModulo() {
+	Scanner leer = new Scanner(System.in);
+	String comprobacion ="";
+	boolean bandera = false;
+	
+	System.out.println("dime el codigo del modulo que quieres eliminar");
+	for (Modulos m : vModulos) {
+		if (m!=null) {
+			System.out.println(m.getNombre()+"------- codigo del modulo: "+m.getCodigo());
+		}
+	}
+	
+	System.out.println("\n dime el codigo del modulo que quieras eliminar");
+	comprobacion = leer.nextLine();
+	
+	for (int i = 0; i < vModulos.length; i++) {
+		if (vModulos[i]!=null && vModulos[i].getCodigo().equalsIgnoreCase(comprobacion)) {
+			vModulos[i] = null;
+			bandera = true;
+		}
+	}
+			
+	if (bandera==false) {
+		System.out.println("No habia ningun modulo que se podia eliminar");
+	} else {
+		System.out.println("Un modulo ha sido eliminado");
+	}
+	
+}
+	
 	public String getNombre() {
 		return nombre;
 	}
